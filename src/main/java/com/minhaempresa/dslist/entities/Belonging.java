@@ -7,28 +7,28 @@ import jakarta.persistence.Table;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb_beloging")
-public class Beloging {
+@Table(name = "tb_belonging")
+public class Belonging {
 
     @EmbeddedId
-    private BelogingPK id = new BelogingPK();
+    private BelongingPK id = new BelongingPK();
 
     private Integer position;
 
-    public Beloging() {
+    public Belonging() {
     }
 
-    public Beloging(Game game, GameList list, Integer position) {
+    public Belonging(Game game, GameList list, Integer position) {
         id.setGame(game);
         id.setList(list);
         this.position = position;
     }
 
-    public BelogingPK getId() {
+    public BelongingPK getId() {
         return id;
     }
 
-    public void setId(BelogingPK id) {
+    public void setId(BelongingPK id) {
         this.id = id;
     }
 
@@ -50,7 +50,7 @@ public class Beloging {
         if(this == obj) return true;
         if(obj == null) return false;
         if(getClass() != obj.getClass()) return false;
-        Beloging other = (Beloging) obj;
+        Belonging other = (Belonging) obj;
         return Objects.equals(id, other.id);
     }
 }
